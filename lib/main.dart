@@ -15,53 +15,19 @@ class _MyAppState extends State<MyApp> {
   TextEditingController controller1 = TextEditingController();
   TextEditingController controller2 = TextEditingController();
 
-  double result = 0, angka1 = 0, angka2 = 0;
-
-  tambah() {
-    setState(() {
-      angka1 = double.parse(controller1.text);
-      angka2 = double.parse(controller2.text);
-      result = angka1 + angka2;
-    });
-  }
-
-  kurang() {
-    setState(() {
-      angka1 = double.parse(controller1.text);
-      angka2 = double.parse(controller2.text);
-      result = angka1 - angka2;
-    });
-  }
-
-  kali() {
-    setState(() {
-      angka1 = double.parse(controller1.text);
-      angka2 = double.parse(controller2.text);
-      result = angka1 * angka2;
-    });
-  }
-
-  bagi() {
-    setState(() {
-      angka1 = double.parse(controller1.text);
-      angka2 = double.parse(controller2.text);
-      result = angka1 / angka2;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.indigo,
+        backgroundColor: Colors.blue,
         title: Text('Calculator'),
       ),
       body: Column(
         children: [
           Align(
               alignment: Alignment.centerLeft,
-              child: Text('Result : $result',
+              child: Text('Result : ',
                   style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
@@ -97,43 +63,19 @@ class _MyAppState extends State<MyApp> {
               alignment: Alignment.center,
               child: Column(
                 children: [
-                  ElevatedButton(
-                      onPressed: () {
-                        tambah();
-                        controller1.clear();
-                        controller2.clear();
-                      },
-                      child: Text('ADD')),
+                  ElevatedButton(onPressed: () {}, child: Text('ADD')),
                   SizedBox(
                     height: 30,
                   ),
-                  ElevatedButton(
-                      onPressed: () {
-                        kurang();
-                        controller1.clear();
-                        controller2.clear();
-                      },
-                      child: Text('SUBSTRACT')),
+                  ElevatedButton(onPressed: () {}, child: Text('SUBSTRACT')),
                   SizedBox(
                     height: 30,
                   ),
-                  ElevatedButton(
-                      onPressed: () {
-                        kali();
-                        controller1.clear();
-                        controller2.clear();
-                      },
-                      child: Text('MULTIPLY')),
+                  ElevatedButton(onPressed: () {}, child: Text('MULTIPLY')),
                   SizedBox(
                     height: 30,
                   ),
-                  ElevatedButton(
-                      onPressed: () {
-                        bagi();
-                        controller1.clear();
-                        controller2.clear();
-                      },
-                      child: Text('DIVIDE'))
+                  ElevatedButton(onPressed: () {}, child: Text('DIVIDE'))
                 ],
               ))
         ],
